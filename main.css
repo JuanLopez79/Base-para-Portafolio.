@@ -1,0 +1,330 @@
+/*Empieza: Ajustes generales */
+*,
+::after,
+::before{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Inter", sans-serif;
+}
+
+.container{
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+/* Termina: Ajustes Generales */
+
+/* ***************************** */
+
+/*Empieza Parte: nav  */
+.nav{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    --url-menu: url('./assets/menu.svg');
+    --opacity-menu: 0;
+    --transform-menu: translateY(-100%);
+    --pointer-menu: none;
+}
+
+.nav__logo{
+    width: min(60%, 200px);
+}
+
+.nav__img{
+    /* width: 100%;
+    display: block; */
+    width: 100%;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.nav__menu{
+    position: absolute;
+    top: 80px;
+    inset-inline: 0;
+    background-color: white;
+    padding: 30px 5%;
+
+    pointer-events: var(--pointer-menu);
+    transform: var(--transform-menu);
+    opacity: var(--opacity-menu);
+    transition: 1.5s opacity, transform 1s;
+}
+
+.nav__links{
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav__link{
+    color: #100606;
+    text-decoration: none;
+}
+
+
+.nav__link:hover{
+    text-decoration: underline;
+}
+
+.nav__buttons{
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.btn{
+    text-align: center;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 4px;
+
+    min-width: max-content;
+    width: 100%;
+    border: 1px solid transparent;
+}
+
+.btn--black{
+    background-color: black;
+    color: white;
+}
+
+.btn--white{
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}
+
+.nav__label{
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    background-image: var(--url-menu);
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+
+[id="menu"]{
+    display: none;
+}
+
+.nav:has([id="menu"]:checked){
+    --url-menu: url('./assets/close.svg');
+    --opacity-menu: 1;
+    --transform-menu: translateY(0);
+    --pointer-menu: unset;
+}
+/* Termina: Parte "nav" */
+
+/* ***************************** */
+
+/* Empieza parte: Hero main */
+.hero__main{
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+}
+
+.hero__title{
+    font-size: 2.5rem;
+}
+
+.hero__paragraph{
+    margin: 2rem 0;
+    line-height: 1.8;
+}
+
+.hero__buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.hero__icon{
+    vertical-align: top;
+}
+
+.hero__figure{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.hero__img{
+    width: 100%;
+}
+/* Termina: Parte "Hero main" */
+
+/* ***************************** */
+
+/* Empieza parte: About */
+
+.about{
+    padding: 30px 0;
+}
+
+.about__title{
+    font-size: 2.5rem;
+}
+
+.about__paragraph{
+    margin-top: 1.5rem;
+    line-height: 1.6;
+}
+
+.cards{
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.cards__article{
+    width: 250px;
+    max-width: 500px;
+    flex-grow: 1;
+
+    display: flex;
+    gap: 1.5rem;
+}
+
+.cards__figure{
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards__text{
+    width: 50%;
+    flex-grow: 1;
+}
+
+.cards__title{
+    font-size: 1.4rem;
+    margin-bottom: .8rem;
+}
+
+.cards__paragraph{
+    line-height: 1.8;
+}
+
+/* Termina: Parte "About" */
+
+/* ***************************** */
+
+/* Empieza parte: technology */
+
+.technology{
+    padding: 30px 0;
+}
+
+.technology__title{
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.technology__container{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.technology__img{
+    width: 20%;
+    max-width: 70px;
+}
+
+/* Termina: Parte "Technology" */
+
+/* ***************************** */
+
+/* Empieza parte: cta */
+.cta{
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 2rem 2.5rem;
+}
+
+.cta__title{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.cta__paragraph{
+    line-height: 1.8;
+    margin: .9rem 0;
+    color: #94a3b8;
+}
+
+.cta__btn{
+    display: block;
+    color:  black;
+    background-color: white;
+    text-decoration: none;
+    padding: .7rem 1.4rem;
+    border-radius: 10px;
+}
+
+.footer{
+    padding: 60px 0;
+    text-align: center;
+    color: #94a3b8
+}
+
+@media (width > 768px){
+    .nav__logo{
+        max-width: 200px;
+    }
+    .hero__main{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (width > 1024px){
+    .nav{
+        height: 120px;
+        --opacity-menu: 1;
+        --transform-menu: unset;
+        --pointer-menu: unset;
+    }
+    .nav__menu{
+        position: static;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .nav__links{
+        margin: 0 auto;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .nav__label{
+        display: none;
+    }
+}
